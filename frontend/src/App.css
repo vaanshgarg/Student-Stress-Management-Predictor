@@ -1,0 +1,289 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* BACKGROUND ----------------------------------------------------------- */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgba(25, 32, 72, 0.4), rgba(16, 27, 69, 0.6)),
+    url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1350&q=80') 
+    no-repeat center/cover;
+  backdrop-filter: blur(3px);
+  animation: bgMove 12s infinite alternate;
+  color: #e6e0e0;
+}
+
+@keyframes bgMove {
+  from { background-size: 105%; }
+  to { background-size: 110%; }
+}
+
+/* MAIN LAYOUT ---------------------------------------------------------- */
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 70px;
+}
+
+/* GLASS EFFECT CARD ---------------------------------------------------- */
+
+.glass-card {
+  width:450px;
+  max-width: 95%;
+  padding: 35px;
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+/* TITLE --------------------------------------------------------------- */
+
+.logo {
+  display: block;
+  width: 85px;
+  margin: 0 auto 15px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #f9fbf8;
+  margin: 0;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 15px;
+
+  color: #e4e6ec;
+  margin-bottom: 20px;
+}
+
+/* PROGRESS BAR -------------------------------------------------------- */
+
+.progress-container {
+  width: 100%;
+  height: 9px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #77f3ff, #4c8cff, #8d5fff);
+  transition: width .35s ease;
+}
+
+.progress-text {
+  text-align: right;
+  font-size: 14px;
+  color: #01030e;
+  margin-bottom: 15px;
+}
+
+/* FORM --------------------------------------------------------------- */
+
+.dropdown-label {
+  color: #250505;
+  margin-bottom: 5px;
+  font-size: 15px;
+  display: block;
+}
+
+.dropdown {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(9, 0, 0, 0.85);
+  font-size: 15px;
+  outline: none;
+  transition: .25s ease;
+}
+
+.dropdown:hover, .dropdown:focus {
+  box-shadow: 0 0 0 3px rgba(120,180,255,0.4);
+}
+
+/* BUTTON -------------------------------------------------------------- */
+
+.btn-group {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 13px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.predict {
+  color: white;
+  background: linear-gradient(90deg, #4c8cff, #8d5fff);
+}
+.predict:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
+.refresh {
+  background: #ffb74d;
+  color: white;
+}
+.refresh:hover {
+  background: #ff9c2d;
+  transform: scale(1.03);
+}
+
+.close {
+  background: #292929;
+  color: rgb(243, 226, 226);
+}
+.close:hover {
+  background: #111;
+}
+
+/* MODAL --------------------------------------------------------------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(244, 243, 243, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.modal-box {
+  width: 360px;
+  padding: 25px;
+  border-radius: 18px;
+  background: rgba(193, 221, 169, 0.9);
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  animation: pop .4s ease;
+  text-align: center;
+}
+
+@keyframes pop {
+  from { transform: scale(.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* RESULT COLORS ------------------------------------------------------- */
+
+.modal-box.low {
+  border-color: #4caf50;
+}
+.modal-box.moderate {
+  border-color: #ffb300;
+}
+.modal-box.high {
+  border-color: #e53935;
+}
+
+.result-text {
+  font-size: 22px;
+  margin: 10px 0 18px;
+  font-weight: 600;
+  color: #202020;
+} 
+/* --- LAYOUT WITH RIGHT SIDE MEME --- */
+.page-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Right side image container */
+.right-side-image {
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.meme-img {
+  max-width: 360px;
+  border-radius: 15px;
+  border: 3px solid rgba(255,255,255,0.6);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* Hover animation */
+.meme-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 1100px) {
+  .page-layout {
+    flex-direction: column;
+  }
+  .right-side-image {
+    margin-left: 0;
+    margin-top: 25px;
+  }
+}
+
+/* --- LAYOUT FOR LEFT & RIGHT MEMES --- */
+.side-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT SIDE MEME */
+.left-side-image {
+  margin-right: 0px;
+}
+
+/* RIGHT SIDE MEME */
+.right-side-image {
+  margin-left: 10px;
+}
+
+.meme-img {
+  max-width: 330px;
+  border-radius: 15px;
+  border: 3px solid rgba(255,255,255,0.6);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.meme-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+}
+
+/* MOBILE — memes go above & below */
+@media (max-width: 1200px) {
+  .side-layout {
+    flex-direction: column;
+  }
+
+  .left-side-image,
+  .right-side-image {
+    margin: 20px 0;
+  }
+}
