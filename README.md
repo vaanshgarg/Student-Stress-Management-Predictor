@@ -21,11 +21,61 @@ The project features a **modern glass-morphism UI**, clean form inputs, and conn
 
 ## 📸 UI Preview
 
-> _Sample Interface Screenshot (replace with your own)_
+> <img width="1625" height="923" alt="image" src="https://github.com/user-attachments/assets/459daf73-0712-43c7-bbda-2362ac27dbee" />
 
-<img src="https://user-images.githubusercontent.com/XXXX/mockup-ui.jpg" width="750"/>
+
 
 ---
 
 ## 📂 Project Structure
 
+```bash
+student-stress-predictor/
+│
+├── backend/
+│   ├── app.py
+│   ├── model.pkl
+│   └── requirements.txt
+│
+├── stress-ui/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── logo.png
+│   ├── index.html
+│   └── package.json
+│
+└── README.md
+
+## ⚙️ Installation & Setup
+
+### 🔧 Backend (Flask + ML)
+
+```bash
+cd backend
+pip install -r requirements.txt
+python app.py
+
+Backend runs at:
+
+http://127.0.0.1:5000
+
+
+🎨 Frontend (Vite + React)
+cd stress-ui
+npm install
+npm run dev
+
+
+Frontend runs at:
+
+http://localhost:5173
+
+
+
+| Category | Technology                      |
+| -------- | ------------------------------- |
+| Frontend | React, Vite, CSS                |
+| Backend  | Python, Flask                   |
+| ML       | scikit-learn, pickled model     |
+| UI       | Glassmorphism, gradients, icons |
